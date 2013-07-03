@@ -5,8 +5,8 @@ a ruby program to parse shoucast log files and output the new required soundexch
 
 Flags:
 
--i "filename"  -  reads from the specified file (stdin default)
--o "filename"  -  writes to the specified file (stdout default)
--s "streamtag" -  stream id tag (stream1 default)
+<br>-i "filename"  -  reads from the specified file (stdin default)
+<br>-o "filename"  -  writes to the specified file (stdout default)
+<br>-s "streamtag" -  stream id tag (stream1 default)
 
 tim@lifelike.com

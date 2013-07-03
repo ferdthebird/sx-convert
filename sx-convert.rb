@@ -1,6 +1,14 @@
 #!/usr/bin/env ruby
 require "date"
 
+#
+# a ruby program that converts shoutcast log files to the new soundexchange required reporting format.
+# reads and writes to stdin/stdout by default.  use -i or -o flags to set an input and/or output file
+# use -s to specify a stream_id.  License is GPLv3 - see enclosed LICENSE file for details
+#
+# tim@lifelike.com
+#
+
 class LogEntry
   attr_accessor :uid, :ip_address, :date, :duration, :status, :agent, :stream_id
   
@@ -116,7 +124,7 @@ end
 
 input_file = STDIN
 output_file = STDOUT
-stream_id = "kwmr128"
+stream_id = "stream1"
 nargs = ARGV.length
 
 if nargs > 0 
@@ -138,11 +146,4 @@ end
 
 lp = LogParser.new(input_file,output_file,stream_id)
 lp.parse
-
-
-# <07/01/13@12:37:31> [dest: 124.5.244.230] starting stream (UID: 206246)[L: 9]{A: Dalvik/1.6.0 (Linux; U; Android 4.1.2; LG-F240K Build/JZO54K)}(P: 8)
-# <07/01/13@12:37:33> [dest: 124.5.244.230] connection closed (2 seconds) (UID: 206246)[L: 8]{Bytes: 111342}(P: 8)
-# <07/01/13@12:44:51> [dest: 108.27.144.141] starting stream (UID: 206247)[L: 9]{A: NSPlayer/11.0.5721.5145}(P: 8)
-# <07/01/13@12:44:52> [dest: 108.27.144.141] connection closed (1 seconds) (UID: 206247)[L: 8]{Bytes: 39104}(P: 8)
-# <07/01/13@12:44:53> [dest: 108.27.144.141] starting stream (UID: 206248)[L: 9]{A: NSPlayer/11.0.5721.5145 WMFSDK/11.0}(P: 8)
 

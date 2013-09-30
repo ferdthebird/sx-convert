@@ -1,7 +1,7 @@
 sx-convert
 ==========
 
-a ruby program to parse shoucast log files and output the new required soundexchange reporting format.  Reads and writes stdin/stdout by default.  
+a ruby program to parse shoutcast log files and output the new required soundexchange reporting format.  Reads and writes stdin/stdout by default.  
 
 Flags:
 

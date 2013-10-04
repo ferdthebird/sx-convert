@@ -135,6 +135,9 @@ end
 
 #####################################
 
+STDIN.binmode
+STDOUT.binmode
+
 input_file = STDIN
 output_file = STDOUT
 stream_id = "stream1"
@@ -143,11 +146,11 @@ nargs = ARGV.length
 if nargs > 0 
   ARGV.each_with_index do |arg,i|
     if arg == "-i"
-      input_file = File.open(ARGV[i+1],"r")
+      input_file = File.open(ARGV[i+1],"rb")
     end
     
     if arg == "-o"
-      output_file = File.open(ARGV[i+1],"w")
+      output_file = File.open(ARGV[i+1],"wb")
     end
     
     if arg == "-s"
